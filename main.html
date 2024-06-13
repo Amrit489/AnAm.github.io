@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Wish</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px 40px;
+            max-width: 700px;
+            animation: fadeIn 2s ease-in-out;
+            transform-origin: top left;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 1s;
+            position: relative; /* Added for balloons */
+        }
+        .card h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #d23669;
+        }
+        .card p {
+            font-size: 1.2em;
+            margin-top: 0;
+            line-height: 1.6;
+        }
+        .main-link {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #d23669;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .main-link:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .turn-page {
+            transform: perspective(1000px) rotateY(-180deg);
+        }
+        .heart {
+            color: #d23669;
+            font-size: 1.2em;
+            vertical-align: middle;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        /* Balloons */
+        .balloon-container {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 100px;
+            background: #f06292;
+            border-radius: 50%;
+            animation: float 4s infinite ease-in-out;
+        }
+        .balloon:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #f06292;
+            border-radius: 50%;
+        }
+        .balloon:after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #f06292;
+            border-radius: 50%;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="click-here-page">
+            <h1>Cheers to two years of love and endless adventures ahead. 💍✨</h1>
+            <a href="#" onclick="turnPage()" class="main-link">Click here for a special message <span class="heart">&hearts;</span></a>
+        </div>
+        
+        <div id="main-message-page" style="display: none;">
+            <h1>Happy Anniversary!</h1>
+            <p>Dear jijs and Sonali Didi,</p>
+            <p>Happy 2nd Engagement Anniversary! 🎉💖</p>
+            <p>
+                Two years ago, you both started a beautiful journey together, filled with love, joy, and countless cherished moments. 
+                Your bond has grown stronger with each passing day, reflecting the deep affection and respect you have for one another. 💑✨
+            </p>
+            <p>
+                jijs, your kindness and unwavering support have always been a pillar of strength for Sonali Didi, and Didi, your love 
+                and warmth have brought so much happiness and light into our lives. Together, you both are an inspiring example of what 
+                true love and partnership mean. 🌹💕🦋
+            </p>
+            <p>
+                As you celebrate this special milestone, may you continue to create wonderful memories, laugh together, and face all of 
+                life's challenges hand in hand. Your love story is a testament to the power of love and commitment, and I feel so fortunate 
+                to witness it. 🌟🥂
+            </p>
+            <p>
+                Wishing you both endless happiness, prosperity, and a future filled with all the dreams and aspirations you hold dear. May 
+                your love continue to blossom and bring joy to everyone around you. 🌺💫🌈
+            </p>
+            <p>
+                Here's to many more anniversaries and a lifetime of togetherness! 🥳❤️🌷
+            </p>
+            <p>With all my love and best wishes,</p>
+            <p>Amrit</p>
+        </div>
+
+        <!-- Balloons Container -->
+        <div class="balloon-container">
+            <div class="balloon"></div>
+            <div class="balloon" style="top: -80px; left: 20%; width: 50px; height: 85px;"></div>
+            <div class="balloon" style="top: -120px; left: 80%; width: 45px; height: 80px;"></div>
+            <div class="balloon" style="top: -100px; left: 50%; width: 55px; height: 90px;"></div>
+            <div class="balloon" style="top: -60px; left: 10%; width: 40px; height: 70px;"></div>
+            <div class="balloon" style="top: -90px; left: 90%; width: 60px; height: 95px;"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        function turnPage() {
+            document.getElementById('click-here-page').style.transform = 'perspective(1000px) rotateY(-180deg)';
+            setTimeout(function() {
+                document.getElementById('click-here-page').style.display = 'none';
+                document.getElementById('main-message-page').style.display = 'block';
+                document.getElementById('main-message-page').style.transform = 'perspective(1000px) rotateY(0deg)';
+            }, 1000); // Adjust timing as necessary to match the transition duration in CSS
+        }
+    </script>
+</body>
+</html>
